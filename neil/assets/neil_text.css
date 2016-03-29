@@ -79,7 +79,8 @@ body {
 	}
 
 	.square2:active {
-	color: rgb(255, 255, 224);
+	/*color: rgb(255, 255, 224);*/
+	color: red;
 	}
 
 

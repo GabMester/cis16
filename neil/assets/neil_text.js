@@ -71,14 +71,35 @@ $(function() {
 	});
 
 	$(".square4").click(function(){
-	$(".final").show();
+	$(".square4").hide();
+	$(".square3").hide();
+	$(".square2").hide();
 	});
-
-
 });
 
 
+if ($('square4').length) {
+    var scrollTrigger = 100, // px
+        backToTop = function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > scrollTrigger) {
+                $('square4').addClass('show');
+            } else {
+                $('square4').removeClass('show');
+            }
+        };
+    backToTop();
+    $(window).on('scroll', function () {
+        backToTop();
+    });
+    $('square4').on('click', function (e) {
+        e.preventDefault();
+        $('html,body').animate({
+            scrollTop: 0
+        }, 700);
+    });
+}
 
-// turn all the dots to color once they;re all clicked
+
 
 
