@@ -32,7 +32,7 @@ $(function() {
 
 
 
-	$(".square1").click(function() {
+	$(".img").click(function() {
 		audio1.play();
 		audio1Played = true;
 	}, function() {
@@ -114,46 +114,55 @@ $(function() {
         var pixelData = ctx.getImageData(event.pageX, event.pageY, 1, 1).data;
 		var canvasClicked = false; 
 
+		var count = 0;
 
-
-    	$('img').mousedown(function() {
+    	$('img').click(function() {
 		canvasClicked = true;
 		console.log("good"); 
    
 		        var pixelCol = "rgb("+parseInt(pixelData[0])+","+parseInt(pixelData[1])+","+parseInt(pixelData[2])+");";
 		        document.getElementById("text").setAttribute("style", "color: rgb("+parseInt(pixelData[0])+","+parseInt(pixelData[1])+","+parseInt(pixelData[2])+");"); 
-		        console.log("goooood");
+
+		      
 		 });
 
-    	$('img').mouseup(function() {
-		console.log("bad"); 
 
-		        document.getElementById("text").setAttribute("style", "color: white;"); 
-		        console.log("baaaaad");
-		 });
+    	 var pixelCol = "rgb("+parseInt(pixelData[0])+","+parseInt(pixelData[1])+","+parseInt(pixelData[2])+");";
+		        document.getElementById("key").setAttribute("style", "background-color: rgb("+parseInt(pixelData[0])+","+parseInt(pixelData[1])+","+parseInt(pixelData[2])+");"); 
+		    
+
+
+
+  //   	$('img').mouseup(function() {
+		// console.log("bad"); 
+		// count += 1;
+
+		//         document.getElementById("text").setAttribute("style", "color: white;"); 
+		//         console.log("baaaaad" + count);
+		// });
+
+
+
+
+
+   //  		$('img').click(function() {
+	  //   		var index = 0;
+			// 	var indexPlus = 0;
+		 //    	function incrementIndex() {
+			//     index += 1;
+			//     indexPlus += 2;
+			// 	};
+			// 	console.log("hello");
+			// });
 
 	     
 	});  
 
 });
 
-// var frequency = 4000;                      // 440 Hz = "A" note
-// var samples_length = 44100;               // Plays for 1 second (44.1 KHz)
-// for (var i=0; i < samples_length ; i++) { // fills array with samples
-//   var t = i/samples_length;               // time from 0 to 1
-//   samples[i] = sin( frequency * 2*PI*t ); // wave equation (between -1,+1)
-//   samples[i] *= (1-t);                    // "fade" effect (from 1 to 0)
-// }
 
 
-
-  
-
-// MOVING DIV >>
-// $(document).ready(function(){
-//                 $(".circle").animate({left: '10%',top: '40%'});
-//             });
-
+ 
 
 
 
